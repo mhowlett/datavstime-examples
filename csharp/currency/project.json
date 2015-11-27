@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "CurrencyProxy DvT data proxy",
+  "authors": [ "admin" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "System.Net.Http": "4.0.0",
+    "Newtonsoft.Json": "5.0.8",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final" 
+  },
+
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls http://*:5004"
+  },
+    
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+        "System.Console": "4.0.0-beta-23516",
+        "System.Threading.Thread": "4.0.0-beta-23516"
+      }
+    }
+  }
+}
