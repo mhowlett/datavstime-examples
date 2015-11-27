@@ -1,5 +1,5 @@
 
-An example custom data source for [datavstime](http://www/datavstime.com)
+An example custom data source for [datavstime](http://www.datavstime.com)
 written in C# targeting CoreCLR. It exposes currency echange rate
 information sourced from an InfluxDb database instance.
 
