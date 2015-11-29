@@ -36,7 +36,7 @@ func main() {
 	http.HandleFunc("/api/v1/functions", handleFunctionsRequest)
 	http.HandleFunc("/api/v1/aggregation-functions", handleAggregationFunctionsRequest)
 	http.HandleFunc("/api/v1/predefined-pages", handlePredefinedPagesRequest)
-	http.HandleFunc("/api/v1/query", handleQueryRequest)
+	http.HandleFunc("/api/v1/series", handleQueryRequest)
 	http.HandleFunc("/api/v1/label-and-value-summary", handleLvsRequest)	
 	log.Fatal(http.ListenAndServe("localhost:7766", nil))
 }
@@ -177,7 +177,7 @@ func handleDataRequest(
 func handleQueryRequest(w http.ResponseWriter, r *http.Request) {
 	addHeaders(w)
 	
-	series := r.URL.Query().Get("series")
+	series := r.URL.Query().Get("query")
 	if series == "" {
 		io.WriteString(w, "[]") 
 		return

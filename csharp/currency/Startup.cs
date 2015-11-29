@@ -167,19 +167,19 @@ namespace DataVsTime
         {
             var request = context.Request;
 
-            if (((string)request.Path).StartsWith("/api/v1/query"))
+            if (((string)request.Path).StartsWith("/api/v1/series"))
             {
                 var parameters = request.Query.ToDictionary(q => q.Key, q => q.Value[0]);
 
-                // series parameter must be present.
-                if (!parameters.ContainsKey("series"))
+                // query parameter must be present.
+                if (!parameters.ContainsKey("query"))
                 {
                     sw.Write(JsonConvert.SerializeObject(new List<object>()));
                     return;
                 }
                 
                 // series specified must 
-                var ss = parseSeriesSet(parameters["series"]);
+                var ss = parseSeriesSet(parameters["query"]);
                 if (ss.Count == 0) 
                 {
                     sw.Write(JsonConvert.SerializeObject(new List<object>()));

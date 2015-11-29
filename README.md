@@ -1,4 +1,4 @@
-## Example data-vs-time proxy adapter targets
+## Example data providers for data-vs-time
 
 Currently there are three:
 
