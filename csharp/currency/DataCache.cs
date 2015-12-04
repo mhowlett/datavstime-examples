@@ -76,9 +76,17 @@ namespace DataVsTime
                         continue;
                     }
 
-                    var value = (double)dataRaw[i][1];
+                    double valu = double.NaN;
+                    if (dataRaw[i][1] is double) {
+                        valu = (double)dataRaw[i][1];
+                    }
+                    else if (dataRaw[i][1] is long) {
+                        valu = (double)(long)dataRaw[i][1];
+                    }
+                    // else NaN;
+                    
                     dates.Add(dateVal);
-                    values.Add(value);
+                    values.Add(valu);
                 }
 
                 // interporlate in to equi-spaced bins.
